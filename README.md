@@ -2,6 +2,10 @@
 I am having trouble getting Sonnet to follow writing style instructions. 
 The writing style varies considerably depending on whether ```claude-3-5-sonnet-20240620``` or ```claude-3-5-sonnet-20241022``` is used, with the older Sonnet doing a much better job of following the writing style instructions.
 
+To write consistently in a specific format and make it token-efficient, I am using a strategy where I provide a JSON object that describes a writing style in detail. This has worked well in previous versions of Sonnet.
+
+The new Sonnet writes with vocabulary and sentence structure that is too advanced. Since I am creating YouTube scripts, the writing needs to be very simple and conversational.
+
 ## Frame Prompt
 The goal of this prompt is to describe the unique angle and audience goals for a YouTube script we're in the process of writing.
 
@@ -23,3 +27,4 @@ See [frame-simple.md](frame-simple.md) for the simple prompt with simplified wri
 - Moving the writing style description to a separate message pair, with the AI responding to the first user prompt and asking whether a certain style should be used.
 - Using the writing style description as a system prompt.
 - Converting the JSON description of the writing style to more of a narrative description in paragraph format.
+- Passing in blocks of text that describe the writing style vs using a JSON-based style.
